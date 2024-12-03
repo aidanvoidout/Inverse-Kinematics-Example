@@ -1,0 +1,48 @@
+[gd_scene load_steps=2 format=3 uid="uid://cr48l1yq8xk8f"]
+
+[ext_resource type="Script" path="res://scripts/ccd.gd" id="1_443bt"]
+
+[node name="Main" type="Node2D"]
+position = Vector2(930, 547)
+script = ExtResource("1_443bt")
+
+[node name="Line2D" type="Line2D" parent="."]
+width = 20.0
+default_color = Color(0.243137, 0.564706, 1, 1)
+joint_mode = 2
+
+[node name="Label" type="Label" parent="."]
+offset_left = -894.0
+offset_top = -420.0
+offset_right = -854.0
+offset_bottom = -397.0
+
+[node name="next" type="Button" parent="."]
+offset_left = -841.0
+offset_top = 23.0
+offset_right = -798.0
+offset_bottom = 77.0
+text = "current:
+CCD"
+
+[node name="HSlider" type="HSlider" parent="."]
+offset_left = -905.0
+offset_top = -526.0
+offset_right = -805.0
+offset_bottom = -510.0
+min_value = 1.0
+max_value = 10.0
+value = 1.0
+
+[node name="lengthslider" type="HSlider" parent="."]
+offset_left = -905.0
+offset_top = -497.0
+offset_right = -805.0
+offset_bottom = -481.0
+min_value = 50.0
+max_value = 300.0
+value = 50.0
+
+[connection signal="pressed" from="next" to="." method="_on_next_pressed"]
+[connection signal="value_changed" from="HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="value_changed" from="lengthslider" to="." method="_on_lengthslider_value_changed"]

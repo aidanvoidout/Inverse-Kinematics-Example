@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://u2pkgu0nr8c7"]
+
+[ext_resource type="Script" path="res://scripts/trigonometric.gd" id="1_uwh2k"]
+
+[node name="Main" type="Node2D"]
+position = Vector2(934, 546)
+script = ExtResource("1_uwh2k")
+
+[node name="Line2D" type="Line2D" parent="."]
+width = 20.0
+default_color = Color(0, 1, 0, 1)
+joint_mode = 2
+
+[node name="Label" type="Label" parent="."]
+offset_left = -342.0
+offset_top = -427.0
+offset_right = -302.0
+offset_bottom = -404.0
+
+[node name="next" type="Button" parent="."]
+offset_left = -841.0
+offset_top = 23.0
+offset_right = -787.0
+offset_bottom = 77.0
+text = "current:
+trigonometric"
+
+[connection signal="pressed" from="next" to="." method="_on_next_pressed"]
